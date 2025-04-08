@@ -10,8 +10,8 @@ ChartJS.register(LineElement, BarElement, CategoryScale, LinearScale, PointEleme
 
 const Dashboard = () => {
     return (
-    <div className='w-full h-auto space-x-3'>
-        <div className='flex w-full'>
+    <div className='w-full h-auto'>
+        <div className='flex w-full space-x-3'>
             <div className='grow p-8 pt-20 w-2/3'>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-6'>
                     <Card icon={<FaShoppingCart />} title="Total Mentee" value="140"/>
@@ -29,10 +29,13 @@ const Dashboard = () => {
                 <Calendar />
             </div>
         </div>
-        <div className='w-full'>
-                <div className='w-[60%]'>
-                    <PieChartWithLabels/> 
-            </div>
+        <div className='w-full flex h-auto space-x-7 mt-10'>
+            <div className='grow p-3 w-2/3'>
+                <PieChartWithLabels/> 
+                </div>
+                <div className='w-[40%] border-l border-gray-300 dark:border-gray-600 h-screen pt-16 px-5'>
+                    welcome
+                </div>
         </div>
     </div>
   )

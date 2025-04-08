@@ -46,15 +46,15 @@ const PieChartWithLabels = () => {
 
   return (
     <div className='flex w-full'>
-    <div className="w-full bg-white dark:bg-gray-800 rounded-md shadow-md p-8 ml-5">
+    <div className="w-full bg-white dark:bg-gray-800 rounded-md shadow-md p-8 ml-4">
       <div className="flex justify-center space-x-20"> {/* Center the pies horizontally */}
         {/* Reduce the width here using Tailwind classes */}
         <div className="w-52 h-52">
           <Pie data={data} options={options} />
-                  </div>
-                  <div className='border-l'></div>
+        </div>
+              <div className='border-l'></div>
         {/* Reduce the width here using Tailwind classes */}
-        <div className="w-52 h-52">
+        <div className="w-48 h-48">
           <Pie data={data} options={options} />
         </div>
       </div>
@@ -70,6 +70,7 @@ const PieChartWithLabels = () => {
         ))}
       </div>
     </div>
+      
     </div>
   );
 };
