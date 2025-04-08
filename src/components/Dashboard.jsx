@@ -1,33 +1,39 @@
 import React from 'react'
 import Card from './Card'
-import { FaBox, FaCog, FaShoppingCart, FaUsers } from 'react-icons/fa'
-import { dataLine, dataBar } from '../assets/chartData'
-import {Line, Bar} from 'react-chartjs-2'
+import { FaBox, FaShoppingCart, FaUsers } from 'react-icons/fa'
+import {dataM } from '../assets/chartData'
+import { Bar } from 'react-chartjs-2'
+import Calendar from './Calendar'
 import {Chart as ChartJS, LineElement, BarElement, CategoryScale, LinearScale, PointElement} from 'chart.js'
+import PieChartWithLabels from './Piechart'
 ChartJS.register(LineElement, BarElement, CategoryScale, LinearScale, PointElement)
 
 const Dashboard = () => {
-  return (
-    <div className='grow p-8 pt-20'>
-        <h2 className='text-2xl mb-4'>Dashboard</h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6'>
-            <Card icon={<FaShoppingCart />} title="Orders" value="140"/>
-            <Card icon={<FaBox />} title="Products" value="120"/>
-            <Card icon={<FaUsers />} title="Users" value="30"/>
-            <Card icon={<FaCog />} title="Settings" value="11"/>
-        </div>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
-            <div className='bg-white p-4 dark:bg-gray-800 rounded-lg shadow-md'>
-                <h3 className='text-lg font-semibold mb-4'>Sales Data</h3>
-                <Line data={dataLine} />
+    return (
+    <div className='w-full h-auto space-x-3'>
+        <div className='flex w-full'>
+            <div className='grow p-8 pt-20 w-2/3'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-6'>
+                    <Card icon={<FaShoppingCart />} title="Total Mentee" value="140"/>
+                    <Card icon={<FaBox />} title="Complete Session" value="120"/>
+                    <Card icon={<FaUsers />} title="New Applicant" value="30"/>
+                </div>
+                <div className=''>
+                    <div className='bg-white p-1 dark:bg-gray-800 rounded-lg shadow-md'>
+                        <h3 className='text-lg font-semibold mb-4'></h3>
+                        <Bar data={dataM} />
+                    </div>
+                </div>  
             </div>
-            <div className='bg-white p-4 dark:bg-gray-800 rounded-lg shadow-md'>
-                <h3 className='text-lg font-semibold mb-4'>Products Data</h3>
-                <Bar data={dataBar} />
+            <div className='w-[40%] border-l border-gray-300 dark:border-gray-600 h-screen pt-16 px-5'>
+                <Calendar />
             </div>
         </div>
-
-          
+        <div className='w-full'>
+                <div className='w-[60%]'>
+                    <PieChartWithLabels/> 
+            </div>
+        </div>
     </div>
   )
 }

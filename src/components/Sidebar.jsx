@@ -33,21 +33,21 @@ const Sidebar = () => {
 						Dashboard
 					</Link>
                 </Link>
-                <li className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/orders') ? activeClass : inactiveClass}`}>
+                <li className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/menteehub') ? activeClass : inactiveClass}`}>
                     <IoBookOutline />
                     <Link to='/menteehub' className='hidden md:inline '>Mentee Hub</Link>
                 </li>
-                <li className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/customers') ? activeClass : inactiveClass}`}>
+                <li className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/mentorhub') ? activeClass : inactiveClass}`}>
                     <MdOutlineShield />
                     <Link to='/mentorhub' className='hidden md:inline '>Mentor Hub</Link>
                 </li>
-                <li className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/users') ? activeClass : inactiveClass}`}>
+                <li className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/schedule') ? activeClass : inactiveClass}`}>
                     <RiCalendarScheduleLine />
-                    <Link to='/users' className='hidden md:inline '>Schedule</Link>
+                    <Link to='/schedule' className='hidden md:inline '>Schedule</Link>
                 </li>
-                <li className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/products') ? activeClass : inactiveClass}`}>
+                <li className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/notification') ? activeClass : inactiveClass}`}>
                     <IoNotificationsCircleOutline/>
-                    <Link to='/products' className='hidden md:inline '>Notification</Link>
+                    <Link to='/notification' className='hidden md:inline '>Notification</Link>
                 </li>
                 <li className='mt-10'>
                     <h1 className='hidden sm:inline-block text-lg my-5'>Manage Account</h1>
