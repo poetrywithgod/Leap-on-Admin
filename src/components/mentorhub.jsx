@@ -87,7 +87,7 @@ const MentorHub = () => {
   // Error state
   if (error) {
     return (
-      <div className="ml-10 mt-6 p-6">
+      <div className="ml-10 mt-10 h-[90vh] p-6">
         <div className="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-4">
           <div className="flex items-center">
             <div className="flex-shrink-0 text-red-500">
@@ -111,7 +111,7 @@ const MentorHub = () => {
   }
 
   return (
-    <div className="ml-10 mt-6 p-6 w-[100%]">
+    <div className="ml-10 mt-10 h-auto p-6 w-[100%]">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
         <h1 className="text-2xl font-bold">Mentor Hub</h1>
         

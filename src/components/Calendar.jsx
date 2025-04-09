@@ -80,7 +80,7 @@ const Calendar = () => {
                         <div className="h-6 border-l-2 border-dotted border-gray-500"></div>
                     </div>
                 </div>
-                <div className='bg-purple-200 py-2 px-5 rounded-md'>
+                <div className='bg-purple-200 py-2 px-5 rounded-md text-sm'>
                     <p>Personal Development</p>
                     <p>Blake Jones & Mary Peters</p>
                 </div>

@@ -6,23 +6,15 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const PieChartWithLabels = () => {
   const data = {
-    labels: ['Segment 1', 'Segment 2', 'Segment 3', 'Segment 4', 'Segment 5'],
+    labels: ['Career guidance', 'Academics', 'Buisness', 'Discipleship', 'Personal development'],
     datasets: [
       {
         data: [30, 15, 25, 10, 20], // Non-equal data values
         backgroundColor: [
-          '#F87171', // red-400
-          '#FBBF24', // yellow-400
-          '#4ADE80', // green-400
-          '#60A5FA', // blue-400
-          '#A855F7', // purple-400
+          '#F87171', '#FBBF24', '#4ADE80', '#60A5FA', '#A855F7',
         ],
         borderColor: [
-          '#DC2626', // red-600
-          '#D97706', // yellow-600
-          '#16A34A', // green-600
-          '#2563EB', // blue-600
-          '#8B5CF6', // purple-600
+          '#DC2626', '#D97706', '#16A34A', '#2563EB', '#8B5CF6',
         ],
         borderWidth: 1,
       },
@@ -46,31 +38,34 @@ const PieChartWithLabels = () => {
 
   return (
     <div className='flex w-full'>
-    <div className="w-full bg-white dark:bg-gray-800 rounded-md shadow-md p-8 ml-4">
-      <div className="flex justify-center space-x-20"> {/* Center the pies horizontally */}
-        {/* Reduce the width here using Tailwind classes */}
-        <div className="w-52 h-52">
-          <Pie data={data} options={options} />
-        </div>
-              <div className='border-l'></div>
-        {/* Reduce the width here using Tailwind classes */}
-        <div className="w-48 h-48">
-          <Pie data={data} options={options} />
-        </div>
-      </div>
-      <div className="mt-4 flex justify-around text-sm text-gray-700">
-        {data.labels.map((label, index) => (
-          <div key={label} className="flex items-center">
-            <div
-              className="w-3 h-3 rounded-full mr-2"
-              style={{ backgroundColor: data.datasets[0].backgroundColor[index] }}
-            ></div>
-            <span>{label}</span>
+      <div className="w-full bg-white dark:bg-gray-800  shadow-md p-8 ml-4">
+        <div className="flex justify-center space-x-20"> {/* Center the pies horizontally */}
+          {/* Reduce the width here using Tailwind classes */}
+          <div className="w-44 h-44">
+            <h1 className='pb-4'>Top Choice For Mentor</h1>
+            <Pie data={data} options={options} />
           </div>
-        ))}
+          <div className='border-l mt-5'></div>
+          {/* Reduce the width here using Tailwind classes */}
+          <div className="w-44 h-44">
+            <h1 className='pb-4'>Top Choice For Mentee</h1>
+            <Pie data={data} options={options} />
+          </div>
+        </div>
+        {/* Added pt-4 here */}
+        <div className="mt-9 pt-4 flex justify-around text-sm text-gray-700">
+          {data.labels.map((label, index) => (
+            <div key={label} className="flex items-center">
+              <div
+                className="w-3 h-3 rounded-full mr-2"
+                style={{ backgroundColor: data.datasets[0].backgroundColor[index] }}
+              ></div>
+              <span>{label}</span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-      
+
     </div>
   );
 };
