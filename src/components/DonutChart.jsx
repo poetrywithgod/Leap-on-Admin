@@ -6,27 +6,27 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DonutChart = () => {
   const data = {
-    labels: ['Segment 1'],
+    labels: ['Call  75%', 'Chat  25%'],
     datasets: [
       {
-        data: [60, 30],
-        backgroundColor: ['#6366F1', '#0EA5E9'], // Indigo, Blue, Sky
+        data: [75, 25], // Adjusted data to match labels
+        backgroundColor: ['#6366F1', '#0EA5E9'],
         borderColor: ['#4F46E5', '#0284C7'],
         borderWidth: 1,
-        cutout: '70%', // Creates the donut hole (same option as Pie)
+        cutout: '70%',
       },
     ],
-    };
-    
-    const data1 = {
-    labels: ['Segment 1'],
+  };
+
+  const data1 = {
+    labels: ['Complete sessions', 'Ongoing sessions'],
     datasets: [
       {
         data: [40, 30],
-        backgroundColor: ['#6366F1', '#0EA5E9'], // Indigo, Blue, Sky
+        backgroundColor: ['#6366F1', '#0EA5E9'],
         borderColor: ['#4F46E5', '#0284C7'],
         borderWidth: 1,
-        cutout: '70%', // Creates the donut hole (same option as Pie)
+        cutout: '70%',
       },
     ],
   };
@@ -34,18 +34,13 @@ const DonutChart = () => {
   const options = {
     plugins: {
       legend: {
-        position: 'bottom',
-        labels: {
-          color: '#374151', // Tailwind gray-700
-          boxWidth: 15,
-          padding: 20,
-        },
+        display: false, // Hide the default legend
       },
       tooltip: {
         callbacks: {
           label: (context) => {
-            const value = data.datasets[0].data[context.dataIndex];
-            const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
+            const value = context.dataset.data[context.dataIndex];
+            const total = context.dataset.data.reduce((a, b) => a + b, 0);
             const percentage = ((value / total) * 100).toFixed(2);
             return `${context.label}: ${value} (${percentage}%)`;
           },
@@ -54,33 +49,56 @@ const DonutChart = () => {
     },
     elements: {
       arc: {
-        borderWidth: 0, // Optional: remove borders between segments
+        borderWidth: 0,
       },
     },
-    maintainAspectRatio: false, // Allows setting custom width and height
+    maintainAspectRatio: false,
     responsive: true,
   };
 
-
   return (
     <div className='flex w-full'>
-      <div className="w-full bg-white dark:bg-gray-800  shadow-md ml-4 pb-14">
-        <div className="flex justify-center space-x-20"> {/* Center the Doughnuts horizontally */}
-          {/* Reduce the width here using Tailwind classes */}
-            <div className="w-48 h-48">
-                <h1 className='text-left pb-5 pt-2 font-semibold text-sm'>Activity</h1>
-                <Doughnut data={data} options={options} />
+      <div className="w-full bg-white dark:bg-gray-800 shadow-md ml-4 px-8">
+        <div className="flex justify-center space-x-10 px-5">
+          <div className="w-1/2">
+            <h1 className='text-left pb-5 pt-2 font-semibold text-sm'>Activity</h1>
+            <div className=" w-48">
+              <Doughnut data={data} options={options} />
             </div>
-            <div className='border-l mt-5'></div>
-                {/* Reduce the width here using Tailwind classes */}
-            <div className="w-48 h-48">
-                <h1 className='text-right pb-5 pt-2 font-semibold text-sm'>This Week</h1>
-                <Doughnut data={data1} options={options} />
+            {/* Custom labels for the first chart */}
+            <div className="flex justify-around text-sm text-gray-700 mt-2 pb-5 dark:text-white">
+              {data.labels.map((label, index) => (
+                <div key={`activity-label-${index}`} className="flex items-center justify-center w-full">
+                  <div
+                    className="w-3 h-3 rounded-full mr-2"
+                    style={{ backgroundColor: data.datasets[0].backgroundColor[index] }}
+                  ></div>
+                  <span>{label}</span>
+                </div>
+              ))}
             </div>
+          </div>
+          <div className='border-l mt-8 mb-10'></div>
+          <div className="w-1/2">
+            <h1 className='text-right pb-5 pt-2 font-semibold text-sm'>This Week</h1>
+            <div className="w-48">
+              <Doughnut data={data1} options={options} />
+            </div>
+            {/* Custom labels for the second chart */}
+            <div className="flex justify-around text-[11px] text-gray-700 mt-2 dark:text-white">
+              {data1.labels.map((label, index) => (
+                <div key={`week-label-${index}`} className="flex items-center w-full">
+                  <div
+                    className="w-5 h-3 rounded-full mr-2"
+                    style={{ backgroundColor: data1.datasets[0].backgroundColor[index] }}
+                  ></div>
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        
       </div>
-
     </div>
   );
 };

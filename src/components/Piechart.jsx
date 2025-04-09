@@ -45,7 +45,7 @@ const PieChartWithLabels = () => {
             <h1 className='pb-4'>Top Choice For Mentor</h1>
             <Pie data={data} options={options} />
           </div>
-          <div className='border-l mt-5'></div>
+          <div className='border-l mt-5 -mb-10'></div>
           {/* Reduce the width here using Tailwind classes */}
           <div className="w-44 h-44">
             <h1 className='pb-4'>Top Choice For Mentee</h1>

@@ -36,7 +36,7 @@ const Calendar = () => {
 
 
     return (
-        <div>
+        <div className='h-auto'>
          <h1 className='pb-3 font-bold'>Schedule</h1>
        
         <div className="w-full mx-auto border rounded-md shadow-md font-sans bg-[#96E2D6]">

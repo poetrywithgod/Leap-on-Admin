@@ -8,6 +8,10 @@ import {Chart as ChartJS, LineElement, BarElement, CategoryScale, LinearScale, P
 import PieChartWithLabels from './Piechart'
 import DonutChart from './DonutChart'
 import { FaCircleCheck } from "react-icons/fa6";
+import { PiHandshakeFill } from "react-icons/pi";
+import { FaUserPlus } from "react-icons/fa6";
+
+
 
 ChartJS.register(LineElement, BarElement, CategoryScale, LinearScale, PointElement)
 
@@ -38,11 +42,26 @@ const Dashboard = () => {
                     <DonutChart/> 
                 </div>
                 <div className='w-[40%] bg-white dark:bg-gray-800 mt-3 h-auto pt-5 px-5'>
-                    <h1 className='text-2xl'> Notifications</h1>
+                    <h1 className='text-xl'> Notifications</h1>
                     <div className='pt-8 pl-5 text-sm flex items-center space-x-4'>
-                        <FaCircleCheck/>
+                        <FaCircleCheck className='w-6 h-6 text-green-500'/>
                         <div>
-                            <p>9:30</p>
+                            <p>9:30am</p>
+                        <p>Alice Smith and David Brown have finished a session.</p>
+                        </div>
+                    </div>
+                    <div className='pt-8 pl-5 text-sm flex items-center space-x-4'>
+                        <PiHandshakeFill className='w-6 h-6 text-orange-500'/>
+                        <div>
+                            <p>11:30am</p>
+                        <p>Alice Smith and David Brown have finished a session.</p>
+                        </div>
+                    </div>
+                    
+                    <div className='pt-8 pl-5 text-sm flex items-center space-x-4'>
+                        <FaUserPlus className='w-6 h-6 text-blue-500'/>
+                        <div>
+                            <p>11:30am</p>
                         <p>Alice Smith and David Brown have finished a session.</p>
                         </div>
                     </div>
