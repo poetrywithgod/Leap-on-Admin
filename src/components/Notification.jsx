@@ -5,7 +5,7 @@ import { FaUserPlus } from "react-icons/fa6";
 
 const Notification = () => {
   return (
-            <div className='w-full mt-20 px-5 h-auto'>
+            <div className='w-full px-5 h-auto'>
                 <h1 className='text-xl bg-white dark:bg-gray-800 p-5'> Notifications</h1>
                     <div className='space-y-5 mt-5'>
                         <h2 className='pt-2 px-2'>Today</h2>
