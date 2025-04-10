@@ -50,7 +50,7 @@ const Sidebar = () => {
                     <Link to='/notification' className='hidden md:inline '>Notification</Link>
                 </li>
                 <li className='mt-10'>
-                    <h1 className='hidden sm:inline-block text-lg my-5'>Manage Account</h1>
+                    <h1 className='hidden md:inline-block text-lg my-5'>Manage Account</h1>
                     <Link to='/profile' className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/profile') ? activeClass : inactiveClass}`}>
                     <CgProfile />
                         <Link to='/profile' className='hidden md:inline '>Profiles</Link>

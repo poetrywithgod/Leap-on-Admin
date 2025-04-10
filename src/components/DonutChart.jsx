@@ -58,7 +58,7 @@ const DonutChart = () => {
 
   return (
     <div className='flex w-full'>
-      <div className="w-full bg-white dark:bg-gray-800 shadow-md ml-4 px-8">
+      <div className="w-full bg-white dark:bg-gray-800 shadow-md px-8 py-8">
         <div className="flex justify-center space-x-10 px-5">
           <div className="w-1/2">
             <h1 className='text-left pb-5 pt-2 font-semibold text-sm'>Activity</h1>
@@ -89,7 +89,7 @@ const DonutChart = () => {
               {data1.labels.map((label, index) => (
                 <div key={`week-label-${index}`} className="flex items-center w-full">
                   <div
-                    className="w-5 h-3 rounded-full mr-2"
+                    className="w-3 h-3 rounded-full mr-2"
                     style={{ backgroundColor: data1.datasets[0].backgroundColor[index] }}
                   ></div>
                   <span>{label}</span>

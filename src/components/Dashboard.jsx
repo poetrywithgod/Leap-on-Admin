@@ -17,7 +17,7 @@ ChartJS.register(LineElement, BarElement, CategoryScale, LinearScale, PointEleme
 
 const Dashboard = () => {
     return (
-    <div className='w-full h-auto'>
+    <div className='w-full h-auto '>
         <div className='flex w-full space-x-3'>
             <div className='grow px-8 w-2/3'>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-6'>
@@ -32,16 +32,16 @@ const Dashboard = () => {
                     </div>
                 </div>  
             </div>
-            <div className='w-[40%] bg-white dark:bg-gray-800 h-screen pt-16 px-5'>
+            <div className='w-[40%] hidden lg:inline bg-white dark:bg-gray-800 pt-5 px-5'>
                 <Calendar />
             </div>
         </div>
-            <div className='flex mt-10 w-full space-x-8'>
-                <div className='grow p-3 w-2/3 space-y-5'>
+            <div className='flex mt-10 w-full space-x-3'>
+                <div className='grow px-8 w-2/3 space-y-5'>
                     <PieChartWithLabels/> 
                     <DonutChart/> 
                 </div>
-                <div className='w-[40%] bg-white dark:bg-gray-800 mt-3 h-auto pt-5 px-5'>
+                <div className='w-[40%] hidden lg:inline bg-white dark:bg-gray-800 mt-3 h-auto pt-5 px-5'>
                     <h1 className='text-xl'> Notifications</h1>
                     <div className='pt-8 pl-5 text-sm flex items-center space-x-4'>
                         <FaCircleCheck className='w-6 h-6 text-green-500'/>

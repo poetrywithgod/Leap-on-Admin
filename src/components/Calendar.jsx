@@ -72,15 +72,15 @@ const Calendar = () => {
                 </div>
                 </div>
             </div>
-            <div className='flex items-center space-x-4 pt-8'>
-                <div>10:30am</div>
-                <div className="relative flex">
+            <div className='flex items-center justify-between pt-8 space-x-3'>
+                <div className="flex space-x-3">
+                    <div>10:30am</div>
                     <div className="flex flex-col items-center">
                         <div className="w-4 h-4 rounded-full bg-gray-500 mb-2"></div>
                         <div className="h-6 border-l-2 border-dotted border-gray-500"></div>
                     </div>
                 </div>
-                <div className='bg-purple-200 py-2 px-5 rounded-md text-sm'>
+                <div className='bg-purple-200 text-gray-900 py-2 px-5 rounded-md text-sm'>
                     <p>Personal Development</p>
                     <p>Blake Jones & Mary Peters</p>
                 </div>
