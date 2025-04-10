@@ -19,7 +19,7 @@ const Dashboard = () => {
     return (
     <div className='w-full h-auto'>
         <div className='flex w-full space-x-3'>
-            <div className='grow p-8 pt-20 w-2/3'>
+            <div className='grow px-8 w-2/3'>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-6'>
                     <Card icon={<FaShoppingCart />} title="Total Mentee" value="140"/>
                     <Card icon={<FaBox />} title="Complete Session" value="120"/>
