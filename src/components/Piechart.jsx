@@ -38,7 +38,7 @@ const PieChartWithLabels = () => {
 
   return (
     <div className='flex w-full'>
-      <div className="w-full bg-white dark:bg-gray-800  shadow-md p-8 ml-4">
+      <div className="w-full bg-white dark:bg-gray-800  shadow-md p-8">
         <div className="flex justify-center space-x-20"> {/* Center the pies horizontally */}
           {/* Reduce the width here using Tailwind classes */}
           <div className="w-44 h-44">
