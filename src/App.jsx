@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Setting from './components/Setting';
 import MenteeHub from './components/menteehub';
 import MentorHub from './components/mentorhub';
+//import Schedule from './components/Schedule';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <ThemeContextProvider>
         <div className='flex'>
           <Sidebar />
-          <div className='grow ml-16 md:ml-48 h-full lg:h-sreen bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white'>
+          <div className='grow ml-16 md:ml-48 h-full lg:h-screen bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white'>
             <Navbar />
             <div className="p-4"> {/* Main content area with padding */}
               <Routes>
