@@ -8,10 +8,13 @@ import MenteeHub from './components/menteehub';
 import MentorHub from './components/mentorhub';
 import Schedule from './components/Schedule';
 import Notification from './components/Notification';
+import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
   return (
-    <Router>
+    <LanguageProvider>
+
+<Router>
       <ThemeContextProvider>
         <div className='flex'>
           <Sidebar />
@@ -33,6 +36,10 @@ function App() {
         </div>
       </ThemeContextProvider>
     </Router>
+    </LanguageProvider>
+
+
+    
   );
 }
 

@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import {FaCog } from 'react-icons/fa';
+import { FaCog } from 'react-icons/fa';
 import { MdOutlineDashboard } from "react-icons/md";
 import { IoBookOutline } from "react-icons/io5";
 import { MdOutlineShield } from "react-icons/md";
 import { RiCalendarScheduleLine } from "react-icons/ri";
 import { IoNotificationsCircleOutline } from "react-icons/io5";
-
-
-
+import { useLanguage } from '../context/LanguageContext';
 
 const Sidebar = () => {
     const location = useLocation();
+    const { t } = useLanguage();
 
     const isActive = (path) => {
         return location.pathname === path;
@@ -23,42 +22,62 @@ const Sidebar = () => {
     return (
         <div className="bg-gray-100 text-gray-900 h-full px-4 fixed w-16 md:w-48 border-r border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:text-white">
             <h1 className='text-2xl font-bold hidden md:block mt-4 text-center italic'>
-                <img src="/logo.png" alt="" />
+                <img src="/logo.png" alt="Logo" />
             </h1>
             <ul className='flex flex-col mt-5 text-sm font-bold'>
-				<Link to='/dashboard' className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/dashboard') ? activeClass : inactiveClass}`}>
-					<MdOutlineDashboard />
-					<Link to='/dashboard' className='hidden md:inline'>
-						Dashboard
-					</Link>
+                <Link 
+                    to='/dashboard' 
+                    className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/dashboard') ? activeClass : inactiveClass}`}
+                >
+                    <MdOutlineDashboard />
+                    <span className='hidden md:inline'>{t('dashboard')}</span>
                 </Link>
-                <li className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/menteehub') ? activeClass : inactiveClass}`}>
+                
+                <Link 
+                    to='/menteehub' 
+                    className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/menteehub') ? activeClass : inactiveClass}`}
+                >
                     <IoBookOutline />
-                    <Link to='/menteehub' className='hidden md:inline '>Mentee Hub</Link>
-                </li>
-                <li className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/mentorhub') ? activeClass : inactiveClass}`}>
-                    <MdOutlineShield />
-                    <Link to='/mentorhub' className='hidden md:inline '>Mentor Hub</Link>
-                </li>
-                <li className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/schedule') ? activeClass : inactiveClass}`}>
-                    <RiCalendarScheduleLine />
-                    <Link to='/schedule' className='hidden md:inline '>Schedule</Link>
-                </li>
-                <li className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/notification') ? activeClass : inactiveClass}`}>
-                    <IoNotificationsCircleOutline/>
-                    <Link to='/notification' className='hidden md:inline '>Notification</Link>
-                </li>
-                <li className='mt-10'>
-                    <h1 className='hidden md:inline-block text-lg my-5'>Manage Account</h1>
-
-                     <Link to='/setting' className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/setting') ? activeClass : inactiveClass}`}>
-                    <FaCog />
-                    <Link to='/setting' className='hidden md:inline '>Setting</Link>
+                    <span className='hidden md:inline'>{t('menteeHub')}</span>
                 </Link>
-               </li>
+                
+                <Link 
+                    to='/mentorhub' 
+                    className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/mentorhub') ? activeClass : inactiveClass}`}
+                >
+                    <MdOutlineShield />
+                    <span className='hidden md:inline'>{t('mentorHub')}</span>
+                </Link>
+                
+                <Link 
+                    to='/schedule' 
+                    className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/schedule') ? activeClass : inactiveClass}`}
+                >
+                    <RiCalendarScheduleLine />
+                    <span className='hidden md:inline'>{t('schedule')}</span>
+                </Link>
+                
+                <Link 
+                    to='/notification' 
+                    className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/notification') ? activeClass : inactiveClass}`}
+                >
+                    <IoNotificationsCircleOutline/>
+                    <span className='hidden md:inline'>{t('notification')}</span>
+                </Link>
+                
+                <li className='mt-10'>
+                    <h1 className='hidden md:inline-block text-lg my-5'>{t('manageAccount')}</h1>
+                    <Link 
+                        to='/setting' 
+                        className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/setting') ? activeClass : inactiveClass}`}
+                    >
+                        <FaCog />
+                        <span className='hidden md:inline'>{t('settings')}</span>
+                    </Link>
+                </li>
             </ul>
         </div>
-    )
-}
+    );
+};
 
 export default Sidebar;
