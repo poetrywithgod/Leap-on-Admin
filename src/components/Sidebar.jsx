@@ -6,7 +6,6 @@ import { IoBookOutline } from "react-icons/io5";
 import { MdOutlineShield } from "react-icons/md";
 import { RiCalendarScheduleLine } from "react-icons/ri";
 import { IoNotificationsCircleOutline } from "react-icons/io5";
-import { CgProfile } from "react-icons/cg";
 
 
 
@@ -22,7 +21,7 @@ const Sidebar = () => {
     const inactiveClass = "hover:bg-gray-600 hover:text-white";
 
     return (
-        <div className="bg-gray-100 text-gray-900 h-screen px-4 fixed w-16 md:w-48 border-r border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:text-white">
+        <div className="bg-gray-100 text-gray-900 h-full px-4 fixed w-16 md:w-48 border-r border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:text-white">
             <h1 className='text-2xl font-bold hidden md:block mt-4 text-center italic'>
                 <img src="/logo.png" alt="" />
             </h1>
@@ -51,10 +50,6 @@ const Sidebar = () => {
                 </li>
                 <li className='mt-10'>
                     <h1 className='hidden md:inline-block text-lg my-5'>Manage Account</h1>
-                    <Link to='/profile' className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/profile') ? activeClass : inactiveClass}`}>
-                    <CgProfile />
-                        <Link to='/profile' className='hidden md:inline '>Profiles</Link>
-                    </Link>
 
                      <Link to='/setting' className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/setting') ? activeClass : inactiveClass}`}>
                     <FaCog />

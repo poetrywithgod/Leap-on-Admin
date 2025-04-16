@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 
 const Schedule = () => {
   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -25,28 +25,28 @@ const Schedule = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedYear, setSelectedYear] = useState(currentDate.getFullYear());
   const [selectedMonth, setSelectedMonth] = useState(currentDate.getMonth());
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
   const [expandedDay, setExpandedDay] = useState(null);
 
-  useEffect(() => {
-    const savedMode = localStorage.getItem('darkMode');
-    if (savedMode) {
-      setDarkMode(JSON.parse(savedMode));
-    } else {
-      setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const savedMode = localStorage.getItem('darkMode');
+  //   if (savedMode) {
+  //     setDarkMode(JSON.parse(savedMode));
+  //   } else {
+  //     setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    localStorage.setItem('darkMode', JSON.stringify(darkMode));
-  }, [darkMode]);
+  // useEffect(() => {
+  //   if (darkMode) {
+  //     document.documentElement.classList.add('dark');
+  //   } else {
+  //     document.documentElement.classList.remove('dark');
+  //   }
+  //   localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  // }, [darkMode]);
 
-  const toggleDarkMode = () => setDarkMode(!darkMode);
+  // const toggleDarkMode = () => setDarkMode(!darkMode);
   const handlePreviousMonth = () => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1));
   const handleNextMonth = () => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1));
 
@@ -105,9 +105,7 @@ const Schedule = () => {
         </h1>
         <div className="flex items-center space-x-4">
           <button 
-            onClick={toggleDarkMode}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
-            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
           >
           
           </button>
