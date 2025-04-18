@@ -12,8 +12,8 @@ import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
   return (
-    <LanguageProvider>
 
+<LanguageProvider>
 <Router>
       <ThemeContextProvider>
         <div className='flex'>
@@ -37,9 +37,6 @@ function App() {
       </ThemeContextProvider>
     </Router>
     </LanguageProvider>
-
-
-    
   );
 }
 
