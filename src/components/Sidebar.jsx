@@ -66,7 +66,7 @@ const Sidebar = () => {
                 </Link>
                 
                 <li className='mt-10'>
-                    <h1 className='hidden md:inline-block text-lg my-5'>{t('manageAccount')}</h1>
+                    <h1 className='hidden md:inline-block text-lg my-5'>{t('Manage Account')}</h1>
                     <Link 
                         to='/setting' 
                         className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/setting') ? activeClass : inactiveClass}`}
