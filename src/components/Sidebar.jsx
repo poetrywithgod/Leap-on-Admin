@@ -20,7 +20,7 @@ const Sidebar = () => {
     const inactiveClass = "hover:bg-gray-600 hover:text-white";
 
     return (
-        <div className="bg-gray-100 text-gray-900 h-full px-4 fixed w-16 md:w-48 border-r border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:text-white">
+        <div className="bg-gray-100 text-gray-900 min-h-screen px-4 fixed w-16 md:w-48 border-r border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:text-white">
             <h1 className='text-2xl font-bold hidden md:block mt-4 text-center italic'>
                 <img src="/logo.png" alt="Logo" />
             </h1>
@@ -30,7 +30,7 @@ const Sidebar = () => {
                     className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/dashboard') ? activeClass : inactiveClass}`}
                 >
                     <MdOutlineDashboard />
-                    <span className='hidden md:inline'>{t('dashboard')}</span>
+                    <span className='hidden md:inline'>{t('Dashboard')}</span>
                 </Link>
                 
                 <Link 
@@ -38,7 +38,7 @@ const Sidebar = () => {
                     className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/menteehub') ? activeClass : inactiveClass}`}
                 >
                     <IoBookOutline />
-                    <span className='hidden md:inline'>{t('menteeHub')}</span>
+                    <span className='hidden md:inline'>{t('Mentee Hub')}</span>
                 </Link>
                 
                 <Link 
@@ -46,7 +46,7 @@ const Sidebar = () => {
                     className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/mentorhub') ? activeClass : inactiveClass}`}
                 >
                     <MdOutlineShield />
-                    <span className='hidden md:inline'>{t('mentorHub')}</span>
+                    <span className='hidden md:inline'>{t('Mentor Hub')}</span>
                 </Link>
                 
                 <Link 
@@ -54,7 +54,7 @@ const Sidebar = () => {
                     className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/schedule') ? activeClass : inactiveClass}`}
                 >
                     <RiCalendarScheduleLine />
-                    <span className='hidden md:inline'>{t('schedule')}</span>
+                    <span className='hidden md:inline'>{t('Schedule')}</span>
                 </Link>
                 
                 <Link 
@@ -62,7 +62,7 @@ const Sidebar = () => {
                     className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/notification') ? activeClass : inactiveClass}`}
                 >
                     <IoNotificationsCircleOutline/>
-                    <span className='hidden md:inline'>{t('notification')}</span>
+                    <span className='hidden md:inline'>{t('Notification')}</span>
                 </Link>
                 
                 <li className='mt-10'>
@@ -72,7 +72,7 @@ const Sidebar = () => {
                         className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/setting') ? activeClass : inactiveClass}`}
                     >
                         <FaCog />
-                        <span className='hidden md:inline'>{t('settings')}</span>
+                        <span className='hidden md:inline'>{t('Settings')}</span>
                     </Link>
                 </li>
             </ul>

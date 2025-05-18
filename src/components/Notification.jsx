@@ -95,7 +95,7 @@ const Notification = () => {
   }, [filterModalRef]);
 
   return (
-    <div className='w-full px-5 h-auto'>
+    <div className='w-full px-5 min-h-screen pb-14'>
       <div className='flex items-center justify-end pb-5'>
         <div className="relative">
           <IoFunnelOutline className="cursor-pointer text-xl font-bold text-orange-500" onClick={toggleFilterModal} />

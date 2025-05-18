@@ -53,7 +53,7 @@ const PieChartWithLabels = () => {
           </div>
         </div>
         {/* Added pt-4 here */}
-        <div className="mt-9 pt-4 flex justify-around text-sm text-gray-700">
+        <div className="mt-9 pt-4 gap-6 flex justify-around text-sm dark:text-gray-50">
           {data.labels.map((label, index) => (
             <div key={label} className="flex items-center">
               <div
