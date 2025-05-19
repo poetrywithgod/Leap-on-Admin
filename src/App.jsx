@@ -9,33 +9,34 @@ import MentorHub from './components/mentorhub';
 import Schedule from './components/Schedule';
 import Notification from './components/Notification';
 import { LanguageProvider } from './context/LanguageContext';
+import PendingRequests from './components/pendingRequests';
 
 function App() {
   return (
-
-<LanguageProvider>
-<Router>
-      <ThemeContextProvider>
-        <div className='flex'>
-          <Sidebar />
-          <div className='grow ml-16 md:ml-48 h-full lg:h-full bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white'>
-            <Navbar />
-            <div className="p-4"> 
-              <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/menteehub" element={<MenteeHub />} />
-                <Route path="/mentorhub" element={<MentorHub />} />
-                <Route path="/schedule" element={<Schedule />} />
-                <Route path="/setting" element={<Setting />} />
-                <Route path="/notification" element={<Notification />} />
-                <Route path="*" element={<div className="p-6 text-center">Page Not Found</div>} />
-              </Routes>
+    <LanguageProvider>
+      <Router>
+        <ThemeContextProvider>
+          <div className='flex'>
+            <Sidebar />
+            <div className='grow ml-16 md:ml-48 h-full lg:h-full bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white'>
+              <Navbar />
+              <div className="p-4"> 
+                <Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/menteehub" element={<MenteeHub />} />
+                  <Route path="/mentorhub" element={<MentorHub />} />
+                  <Route path="/pending-requests" element={<PendingRequests />} /> {/* Add this route */}
+                  <Route path="/schedule" element={<Schedule />} />
+                  <Route path="/setting" element={<Setting />} />
+                  <Route path="/notification" element={<Notification />} />
+                  <Route path="*" element={<div className="p-6 text-center">Page Not Found</div>} />
+                </Routes>
+              </div>
             </div>
           </div>
-        </div>
-      </ThemeContextProvider>
-    </Router>
+        </ThemeContextProvider>
+      </Router>
     </LanguageProvider>
   );
 }

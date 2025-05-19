@@ -6,7 +6,9 @@ import { IoBookOutline } from "react-icons/io5";
 import { MdOutlineShield } from "react-icons/md";
 import { RiCalendarScheduleLine } from "react-icons/ri";
 import { IoNotificationsCircleOutline } from "react-icons/io5";
+import { MdOutlinePendingActions } from "react-icons/md"; // New icon for pending requests
 import { useLanguage } from '../context/LanguageContext';
+
 
 const Sidebar = () => {
     const location = useLocation();
@@ -47,6 +49,15 @@ const Sidebar = () => {
                 >
                     <MdOutlineShield />
                     <span className='hidden md:inline'>{t('Mentor Hub')}</span>
+                </Link>
+                
+                {/* Add Pending Requests link */}
+                <Link 
+                    to='/pending-requests' 
+                    className={`flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer ${isActive('/pending-requests') ? activeClass : inactiveClass}`}
+                >
+                    <MdOutlinePendingActions />
+                    <span className='hidden md:inline'>{t('Pending Requests')}</span>
                 </Link>
                 
                 <Link 
